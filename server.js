@@ -40,10 +40,10 @@ app.use("/api", require("./routes/message-routes"));
 const errorHanlder = require("./middlewares/errorhandler");
 app.use(errorHanlder);
 
-// app.use(express.static("./client/dist"))
-// app.get("*" , (_,res) => {
-// 	res.sendFile(path.join(__dirname , "./client/dist/index.html"))
-// })
+app.use(express.static("./client/dist"))
+app.get("*" , (_,res) => {
+	res.sendFile(path.join(__dirname , "./client/dist/index.html"))
+})
 
 const PORT = process.env.PORT || 5000;
 
