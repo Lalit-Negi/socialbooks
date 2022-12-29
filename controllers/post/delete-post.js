@@ -19,7 +19,7 @@ const deletePost = async (req, res, next) => {
 
 		try {
 			data.images.forEach((image) => {
-				removedUrl.push(image.split(`5000/`)[1]);
+				removedUrl.push(image.split(`.com/`)[1]);
 			});
 		} catch (error) {
 			return next();
